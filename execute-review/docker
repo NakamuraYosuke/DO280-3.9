@@ -1,0 +1,9 @@
+OPTIONS=' --selinux-enabled --signature-verification=False'
+if [ -z "${DOCKER_CERT_PATH}" ]; then
+    DOCKER_CERT_PATH=/etc/docker
+fi
+
+ADD_REGISTRY='--add-registry registry.lab.example.com --add-registry registry.access.redhat.com'
+
+BLOCK_REGISTRY='--block-registry registry.access.redhat.com --block-registry docker.io --block-registryj registry.lab.example.com'
+
