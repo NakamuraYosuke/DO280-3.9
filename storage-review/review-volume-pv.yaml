@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: review-pv
+spec:
+  capacity:
+    storage: 3Gi
+  accessModes:
+  - ReadWriteMamy
+  nfs:
+    path: /var/export/review-dbvol
+    server: services.lab.example.com
+  persistentVolumeReclaimPolicy: Recycle
