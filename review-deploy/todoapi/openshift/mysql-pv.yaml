@@ -5,7 +5,7 @@ name: mysql-pv spec:
  capacity:
   storage: 2Gi
 accessModes:
-- ReadWriteMany
+ - ReadWriteMany
 nfs:
-path: /var/export/dbvol
-server: services.lab.example.com
+ path: /var/export/dbvol
+ server: services.lab.example.com
