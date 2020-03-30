@@ -69,7 +69,7 @@ objects:
       contextDir: ${CONTEXT_DIR}
       git:
         ref: ${SOURCE_REPOSITORY_REF}
-        url: ${SOURCE_REPOSITORY_URL}
+        uri: ${SOURCE_REPOSITORY_URL}
       type: Git
     strategy:
       sourceStrategy:
@@ -78,7 +78,7 @@ objects:
           value: ${NPM_MIRROR}
         from:
           kind: ImageStreamTag
-          name: nodejs:4
+          name: nodejs:8
           namespace: ${NAMESPACE}
       type: Source
     triggers:
@@ -224,7 +224,7 @@ objects:
         - mysql
         from:
           kind: ImageStreamTag
-          name: mysql:5.6
+          name: mysql:5.7
           namespace: ${NAMESPACE}
       type: ImageChange
     - type: ConfigChange
@@ -258,7 +258,7 @@ parameters:
   displayName: Git Repository URL
   name: SOURCE_REPOSITORY_URL
   required: true
-  value: https://github.com/openshift/nodejs-ex.git
+  value: https://github.com/NakamuraYosuke/todoapi
 - description: Set this to a branch name, tag or other ref of your repository if you are not using the default branch.
   displayName: Git Reference
   name: SOURCE_REPOSITORY_REF
