@@ -1,6 +1,6 @@
-var express    = requre('express'),
+var express    = require('express'),
     app        = express(),
-    bodyParser = requre('body-parser'),
+    bodyParser = require('body-parser'),
     os         = require('os'),
     hostname   = os.hostname();
 
@@ -12,7 +12,7 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000,
 
 var route = express.Router();
 
-app.user('/', route);
+app.use('/', route);
 
 route.get('/', function(req, res) {
     res.send('Hi! I am running on host -> ' + hostname + '\n');
